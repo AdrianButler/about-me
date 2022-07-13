@@ -1,5 +1,8 @@
 'use strict';
 
+console.log(response => response.json());
+console.log(json => console.log(json));
+
 let questionsRight = 0;
 
 let userName = prompt('What\'s your name');
@@ -96,12 +99,65 @@ if (question5 === 'y' || question5 === 'yes')
   alert('It was a yes or no question doofus.');
 }
 
+const randomNumber = Math.floor(Math.random() * 10) + 1;
+let attempts = 4;
+let numberGuess;
+
+while (attempts)
+{
+  numberGuess = Number(prompt('Guess a random number'));
+  if (numberGuess === randomNumber)
+  {
+    questionsRight++;
+    alert('You guessed right!');
+    break;
+  } else
+  {
+    attempts--;
+    if (attempts <= 0)
+    {
+      alert(`You answered wrong too many times. The correct answer was ${randomNumber}.`);
+    } else if (numberGuess > randomNumber)
+    {
+      alert('Too high!');
+    } else if (numberGuess < randomNumber)
+    {
+      alert('Too low!');
+    }
+  }
+}
+
+attempts = 6;
+let oldQuestionsRight = questionsRight;
+let questionSevenResponse;
+let questionSevenAnswers = ['coding', 'code', 'food', 'games', 'video games', 'programming'];
+while (attempts && questionsRight === oldQuestionsRight)
+{
+  questionSevenResponse = prompt('What am I thinking of right now?').toLowerCase();
+
+  for (let i = 0; i < questionSevenAnswers.length; ++i)
+  {
+    if (questionSevenAnswers[i] === questionSevenResponse)
+    {
+      questionsRight++;
+      break;
+    }
+  }
+  if (oldQuestionsRight === questionsRight)
+  {
+    alert("nope");
+  }
+}
+
+if (attempts === 0)
+{
+  alert('You ran out of attempts');
+} else
+{
+  alert('Good job you are right!');
+}
+
+alert(`Here were all the possible answers: ${questionSevenAnswers}`);
+
+
 alert(`Thank you for taking my quiz ${userName}. You got ${questionsRight} right!`);
-
-
-
-
-
-
-
-
