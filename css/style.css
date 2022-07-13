@@ -1,6 +1,6 @@
 html {
-    background-color: #575656;
-    color: #94e9fd;
+    background-color: darkgray;
+    /*color: ;*/
 }
 
 h1 {
@@ -8,16 +8,31 @@ h1 {
     font-weight: 500;
 }
 
+h3 {
+    background-color: lightcoral;
+    display: inline;
+}
+
+ol {
+    padding-left: 30px;
+    list-style-type: decimal;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 30px;
+}
+
 #title {
     text-align: center;
 }
 
 #name {
-
+    font-size: xxx-large;
 }
 
 #introduction {
-
+    font-size: xx-large;
 }
 
 #education {
