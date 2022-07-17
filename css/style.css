@@ -1,6 +1,5 @@
 html {
     background-color: darkgray;
-    /*color: ;*/
 }
 
 h1 {
@@ -45,4 +44,8 @@ ul {
 
 #goals {
 
+}
+
+#most-played-games {
+    background-color: #8fa9ff;
 }
